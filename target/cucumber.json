@@ -1,0 +1,75 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 6,
+        "name": "Add two numbers",
+        "description": "",
+        "id": "calculator;add-two-numbers",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 144621077,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I have a calculator",
+            "match": {
+              "location": "Home.iHaveACalculator()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 3154975,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I add 2 and 3",
+            "match": {
+              "arguments": [
+                {
+                  "val": "2",
+                  "offset": 6
+                },
+                {
+                  "val": "3",
+                  "offset": 12
+                }
+              ],
+              "location": "Home.iAddAnd(int,int)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 3558450,
+              "error_message": "java.lang.AssertionError: expected:\u003c4\u003e but was:\u003c5\u003e\n\tat org.junit.Assert.fail(Assert.java:88)\n\tat org.junit.Assert.failNotEquals(Assert.java:743)\n\tat org.junit.Assert.assertEquals(Assert.java:118)\n\tat org.junit.Assert.assertEquals(Assert.java:555)\n\tat org.junit.Assert.assertEquals(Assert.java:542)\n\tat steps.Home.theResultShouldBe(Home.java:27)\n\tat ✽.Then the result should be 4(src/test/resources/home.feature:9)\n",
+              "status": "failed"
+            },
+            "line": 9,
+            "name": "the result should be 4",
+            "match": {
+              "arguments": [
+                {
+                  "val": "4",
+                  "offset": 21
+                }
+              ],
+              "location": "Home.theResultShouldBe(int)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Calculator",
+    "description": "As a user\nI want to use a calculator\nSo that I don\u0027t need to calculate myself",
+    "id": "calculator",
+    "keyword": "Feature",
+    "uri": "src/test/resources/home.feature"
+  }
+]
