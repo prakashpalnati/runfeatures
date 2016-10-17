@@ -7,7 +7,7 @@ import cucumber.api.junit.Cucumber;
 
 @CucumberOptions(
         plugin = { "html:target/cucumber-html-report", "json:target/cucumber.json" },
-        features = {"src/test/resources/home.feature" },
+        features = {"src/test/resources/features/home.feature" },
         glue = {"steps" },
         strict = true,
         dryRun = false,

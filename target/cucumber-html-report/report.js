@@ -1,70 +1,79 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("src/test/resources/home.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("src/test/resources/features/home.feature");
 formatter.feature({
   "line": 1,
-  "name": "Calculator",
-  "description": "As a user\nI want to use a calculator\nSo that I don\u0027t need to calculate myself",
-  "id": "calculator",
+  "name": "SignUP",
+  "description": "As a user(teacher)\nI want to signup\nand",
+  "id": "signup",
   "keyword": "Feature"
+});
+formatter.before({
+  "duration": 9619310127,
+  "status": "passed"
 });
 formatter.scenario({
   "line": 6,
-  "name": "Add two numbers",
+  "name": "Teacher SignUP",
   "description": "",
-  "id": "calculator;add-two-numbers",
+  "id": "signup;teacher-signup",
   "type": "scenario",
   "keyword": "Scenario"
 });
 formatter.step({
   "line": 7,
-  "name": "I have a calculator",
+  "name": "User on Homepage",
   "keyword": "Given "
 });
 formatter.step({
   "line": 8,
-  "name": "I add 2 and 3",
+  "name": "clicked on signUp link",
   "keyword": "When "
 });
 formatter.step({
-  "line": 9,
-  "name": "the result should be 4",
-  "keyword": "Then "
+  "comments": [
+    {
+      "line": 9,
+      "value": "#    Then options to be teacher or student or adminstrator"
+    }
+  ],
+  "line": 10,
+  "name": "clicked on I am a Teacher",
+  "keyword": "When "
+});
+formatter.step({
+  "line": 11,
+  "name": "enter username and password",
+  "keyword": "When "
 });
 formatter.match({
-  "location": "Home.iHaveACalculator()"
+  "location": "SignUp.userOnHomepage()"
 });
 formatter.result({
-  "duration": 144621077,
+  "duration": 10887529618,
   "status": "passed"
 });
 formatter.match({
-  "arguments": [
-    {
-      "val": "2",
-      "offset": 6
-    },
-    {
-      "val": "3",
-      "offset": 12
-    }
-  ],
-  "location": "Home.iAddAnd(int,int)"
+  "location": "SignUp.clickedOnSignUpLink()"
 });
 formatter.result({
-  "duration": 3154975,
+  "duration": 299159933,
   "status": "passed"
 });
 formatter.match({
-  "arguments": [
-    {
-      "val": "4",
-      "offset": 21
-    }
-  ],
-  "location": "Home.theResultShouldBe(int)"
+  "location": "SignUp.clickedOnIAmATeacher()"
 });
 formatter.result({
-  "duration": 3558450,
-  "error_message": "java.lang.AssertionError: expected:\u003c4\u003e but was:\u003c5\u003e\n\tat org.junit.Assert.fail(Assert.java:88)\n\tat org.junit.Assert.failNotEquals(Assert.java:743)\n\tat org.junit.Assert.assertEquals(Assert.java:118)\n\tat org.junit.Assert.assertEquals(Assert.java:555)\n\tat org.junit.Assert.assertEquals(Assert.java:542)\n\tat steps.Home.theResultShouldBe(Home.java:27)\n\tat ✽.Then the result should be 4(src/test/resources/home.feature:9)\n",
-  "status": "failed"
+  "duration": 6241547306,
+  "status": "passed"
+});
+formatter.match({
+  "location": "SignUp.enterUsernameAndPassword()"
+});
+formatter.result({
+  "duration": 954279125,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 133863458,
+  "status": "passed"
 });
 });

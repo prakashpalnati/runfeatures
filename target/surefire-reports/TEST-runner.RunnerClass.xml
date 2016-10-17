@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="runner.RunnerClass" time="0.652" tests="4" errors="0" skipped="0" failures="2">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="runner.RunnerClass" time="29.055" tests="0" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
-    <property name="cucumber.options" value="src/test/resources/home.feature"/>
+    <property name="cucumber.options" value="src/test/resources/features/home.feature"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-oracle/jre/lib/amd64"/>
     <property name="java.vm.version" value="25.101-b13"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
@@ -39,10 +39,11 @@
     <property name="file.encoding" value="UTF-8"/>
     <property name="user.name" value="prakash"/>
     <property name="java.class.path" value="/usr/share/maven/boot/plexus-classworlds-2.x.jar"/>
+    <property name="failIfNoTests" value="false"/>
     <property name="java.vm.specification.version" value="1.8"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="/usr/lib/jvm/java-8-oracle/jre"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean verify -Dtest=RunnerClass.java -Dcucumber.options=src/test/resources/home.feature"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean verify -Dtest=RunnerClass.java -Dcucumber.options=src/test/resources/features/home.feature -DfailIfNoTests=false"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="en"/>
     <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
@@ -60,14 +61,4 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase name="Given I have a calculator" classname="Scenario: Add two numbers" time="0.002"/>
-  <testcase name="When I add 2 and 3" classname="Scenario: Add two numbers" time="0"/>
-  <testcase name="Then the result should be 4" classname="Scenario: Add two numbers" time="0.009">
-    <failure message="expected:&lt;4&gt; but was:&lt;5&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<4> but was:<5>
-]]></failure>
-  </testcase>
-  <testcase name="Scenario: Add two numbers" classname="Scenario: Add two numbers" time="0.009">
-    <failure message="expected:&lt;4&gt; but was:&lt;5&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<4> but was:<5>
-]]></failure>
-  </testcase>
 </testsuite>
