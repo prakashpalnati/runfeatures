@@ -22,4 +22,7 @@ public class SignUpPage {
 
     @FindBy(css = "button[mode='teacher']")
     public WebElement btnSignUpAsTeacher;
+
+    @FindBy(css = "input[placeholder='Enter zip code']")
+    public WebElement fldEnterZipCode;
 }

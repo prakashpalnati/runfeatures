@@ -24,8 +24,8 @@
         <!-- Dependency For Cucumber Custom Report -->
         <dependency>
             <groupId>net.masterthought</groupId>
-            <artifactId>cucumber-reporting</artifactId>
-            <version>2.4.0</version>
+            <artifactId>maven-cucumber-reporting</artifactId>
+            <version>3.1.0</version>
         </dependency>
 
         <dependency>
@@ -131,7 +131,7 @@
             <plugin>
                 <groupId>net.masterthought</groupId>
                 <artifactId>maven-cucumber-reporting</artifactId>
-                <version>2.4.0</version>
+                <version>3.1.0</version>
                 <executions>
                     <execution>
                         <id>execution</id>
@@ -143,9 +143,9 @@
                             <projectName>cucum</projectName>
                             <outputDirectory>${project.build.directory}/cucumber-html-report</outputDirectory>
                             <cucumberOutput>${project.build.directory}/cucumber.json</cucumberOutput>
-                            <parallelTesting>false</parallelTesting>
+                            <parallelTesting>true</parallelTesting>
                             <buildNumber>1</buildNumber>
-                            <!--<checkBuildResult>false</checkBuildResult>-->
+                            <!--<checkBuildResult>true</checkBuildResult>-->
                         </configuration>
                     </execution>
                 </executions>

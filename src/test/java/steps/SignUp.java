@@ -1,13 +1,17 @@
 package steps;
 
+import cucumber.api.DataTable;
 import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 import pages.HomeAndLoginPage;
 import pages.SignUpPage;
 import utils.Utils;
+
+import java.util.List;
 
 /**
  * Created by prakash on 13/10/16.
@@ -43,15 +47,19 @@ public class SignUp  {
         objHomeAndLoginPage.btnIamATeacher.click();
     }
 
-    @When("^enter username and password$")
-    public void enterUsernameAndPassword() throws Throwable {
+
+
+
+    @When("^user enters \"([^\"]*)\"  and \"([^\"]*)\"$")
+    public void userEntersAnd(String username, String password) throws Throwable {
         // Write code here that turns the phrase above into concrete actions
-        objSignUpPage.fldUserName.sendKeys("eg56veh");
-        objSignUpPage.fldUserEmail.sendKeys("bwtrhgkfd@nsdkf.com");
-        objSignUpPage.fldPassword.sendKeys("snapwiz");
-        objSignUpPage.fldRetypePassword.sendKeys("snapwiz");
+        String email = username+"@snapwiz.com";
+        objSignUpPage.fldUserName.sendKeys(username);
+        objSignUpPage.fldUserEmail.sendKeys(email);
+        objSignUpPage.fldPassword.sendKeys(password);
+        objSignUpPage.fldRetypePassword.sendKeys(password);
         objSignUpPage.btnSignUpAsTeacher.click();
 
-
+        Assert.assertTrue(objSignUpPage.fldEnterZipCode.isDisplayed(),"enter zip code i s not displayed");
     }
 }

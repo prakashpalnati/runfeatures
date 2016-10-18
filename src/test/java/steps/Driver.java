@@ -1,7 +1,10 @@
 package steps;
 
+import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -40,7 +43,7 @@ public void beforeSuite() throws IOException {
 
     if (Browser.equalsIgnoreCase("chrome")){
         String driverPath=null;
-    if(osType.startsWith("windows")){
+    if(osType.startsWith("Windows")){
         driverPath= userDir+fileSeparator+"chromedriver.exe";}
         else{
         driverPath= userDir+fileSeparator+"chromedriver";
@@ -52,11 +55,20 @@ public void beforeSuite() throws IOException {
 
     //driver.get(Server);
     driver.manage().window().maximize();
-    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 }
 
 @After
-    public void afterSuite(){
+    public void afterSuite(Scenario scenario){
+try{
+    if (scenario.isFailed()) {
+         byte[] screenshot = ((TakesScreenshot) driver)
+                .getScreenshotAs(OutputType.BYTES);
+        scenario.embed(screenshot, "image/png"); //stick it in the report
+    }}
+    catch (Exception e){
+        System.out.println("error is"+e.getStackTrace());
+    }
 
    driver.quit();
    driver = null;
