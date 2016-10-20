@@ -9,6 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import pages.HomeAndLoginPage;
 import pages.SignUpPage;
+import utils.Properties;
 import utils.Utils;
 
 import java.util.List;
@@ -29,7 +30,7 @@ public class SignUp  {
     @Given("^User on Homepage$")
     public void userOnHomepage() throws Throwable {
 
-        driver.get("http://10.0.0.68");
+        driver.get(Driver.Server);
         // Write code here that turns the phrase above into concrete actions
 
     }

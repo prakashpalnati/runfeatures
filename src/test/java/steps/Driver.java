@@ -20,6 +20,9 @@ import java.util.concurrent.TimeUnit;
  */
 public class Driver {
 
+    public static String Server;
+    public static String Browser;
+
    static WebDriver driver = null;
     String userDir = System.getProperty("user.dir");
     String fileSeparator = System.getProperty("file.separator");
@@ -32,8 +35,8 @@ public void beforeSuite() throws IOException {
 
 
     Properties.loadPropertiesFile("common.properties");
-    String Browser = Properties.getPropertyValue("Browser");
-    String Server = Properties.getPropertyValue("Server");
+     Browser = Properties.getPropertyValue("Browser");
+     Server = Properties.getPropertyValue("Server");
 
     if (Browser.equalsIgnoreCase("firefox")){
 
@@ -55,7 +58,7 @@ public void beforeSuite() throws IOException {
 
     //driver.get(Server);
     driver.manage().window().maximize();
-    driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+    driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 }
 
 @After
