@@ -22,6 +22,7 @@ public class Driver {
 
     public static String Server;
     public static String Browser;
+    public static String Protocol;
 
    static WebDriver driver = null;
     String userDir = System.getProperty("user.dir");
@@ -36,7 +37,8 @@ public void beforeSuite() throws IOException {
 
     Properties.loadPropertiesFile("common.properties");
      Browser = Properties.getPropertyValue("Browser");
-     Server = Properties.getPropertyValue("Server");
+    Protocol = Properties.getPropertyValue("Protocol");
+     Server = Protocol+"://"+Properties.getPropertyValue("Server");
 
     if (Browser.equalsIgnoreCase("firefox")){
 

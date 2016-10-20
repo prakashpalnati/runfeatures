@@ -102,8 +102,8 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                 </configuration>
             </plugin>
 
@@ -120,7 +120,7 @@
                 <version>2.19.1</version>
                 <configuration>
                     <includes>
-                        <include>com/selenium/cucumber/runner/CucumberRunner.java</include>
+                        <include>com/selenium/cucumber/runner/RunnerClass.java</include>
                     </includes>
                     <printSummary>true</printSummary>
                     <testFailureIgnore>true</testFailureIgnore>
